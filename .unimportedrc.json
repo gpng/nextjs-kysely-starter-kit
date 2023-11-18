@@ -1,0 +1,21 @@
+{
+  "entry": [
+    "src/**/*.{js,jsx,ts,tsx}",
+    "src/scripts/**/*.{js,jsx,ts,tsx}",
+    "src/db/**/*.{js,jsx,ts,tsx}",
+    "src/types/**/*.{js,jsx,ts,tsx}",
+    "src/middleware.ts"
+  ],
+  "ignorePatterns": [
+    "**/node_modules/**",
+    "**/*.tests.{js,jsx,ts,tsx}",
+    "**/*.test.{js,jsx,ts,tsx}",
+    "**/*.spec.{js,jsx,ts,tsx}",
+    "**/tests/**",
+    "**/__tests__/**",
+    "**/*.d.ts"
+  ],
+  "ignoreUnimported": [],
+  "ignoreUnused": ["next", "react", "react-dom"],
+  "ignoreUnresolved": []
+}
