@@ -8,6 +8,7 @@
     "plugin:react-hooks/recommended",
     "plugin:prettier/recommended"
   ],
+  "ignorePatterns": ["**/components/ui/*.tsx", "**/components/ui/*.ts", "src/types/kysely.ts"],
   "rules": {
     "prettier/prettier": "error",
     "@typescript-eslint/consistent-type-imports": [
@@ -26,6 +27,7 @@
         "varsIgnorePattern": "^_"
       }
     ],
-    "@typescript-eslint/no-floating-promises": "error"
+    "@next/next/no-img-element": "off",
+    "no-console": ["warn", { "allow": ["warn", "error"] }]
   }
 }
