@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 import { format } from 'date-fns';
 import fs from 'fs';
 import { snakeCase } from 'lodash';

@@ -5,7 +5,7 @@ import Container from '@/app/(main)/components/ui/container';
 import { DASHBOARD_ROUTE } from '@/app/(main)/routes';
 import { signIn, signOut } from 'next-auth/react';
 import Link from 'next/link';
-import { FC } from 'react';
+import { type FC } from 'react';
 
 interface Props {
   isAuthenticated: boolean;

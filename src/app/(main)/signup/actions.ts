@@ -1,4 +1,5 @@
 'use server';
+
 import { ActionError } from '@/app/(main)/models/action-models';
 import { SignupActionError } from '@/app/(main)/signup/models/signup-models';
 import database from '@/db/database';

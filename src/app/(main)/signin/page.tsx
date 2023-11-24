@@ -26,7 +26,7 @@ import { EyeIcon, EyeOffIcon } from 'lucide-react';
 import { signIn } from 'next-auth/react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import { FC } from 'react';
+import { type FC } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 

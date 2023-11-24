@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 import { promises as fs } from 'fs';
 import { FileMigrationProvider, Migrator } from 'kysely';
 import * as path from 'path';

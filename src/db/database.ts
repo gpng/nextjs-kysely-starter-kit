@@ -1,4 +1,4 @@
-import { DB } from '@/types/kysely';
+import { type DB } from '@/types/kysely';
 import { Kysely, PostgresDialect } from 'kysely';
 import { Pool } from 'pg';
 

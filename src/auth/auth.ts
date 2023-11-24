@@ -1,7 +1,7 @@
 import database from '@/db/database';
 import bcrypt from 'bcrypt';
-import { GetServerSidePropsContext, NextApiRequest, NextApiResponse } from 'next';
-import { AuthOptions, getServerSession } from 'next-auth';
+import { type GetServerSidePropsContext, type NextApiRequest, type NextApiResponse } from 'next';
+import { getServerSession, type AuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
 export const authOptions: AuthOptions = {
@@ -13,7 +13,7 @@ export const authOptions: AuthOptions = {
         email: { label: 'Email', type: 'email' },
         password: { label: 'Password', type: 'password' },
       },
-      async authorize(credentials, req) {
+      async authorize(credentials) {
         const email = credentials?.email;
         const password = credentials?.password;
 
