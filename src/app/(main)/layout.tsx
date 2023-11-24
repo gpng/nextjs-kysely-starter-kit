@@ -2,9 +2,9 @@ import Header from '@/app/(main)/components/header/header';
 import Container from '@/app/(main)/components/ui/container';
 import { Toaster } from '@/app/(main)/components/ui/toaster';
 import '@/app/(main)/globals.css';
-import { Metadata } from 'next';
+import { type Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { FC } from 'react';
+import { type FC } from 'react';
 
 const inter = Inter({
   subsets: ['latin'],

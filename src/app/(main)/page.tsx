@@ -3,7 +3,7 @@
 import { buttonVariants } from '@/app/(main)/components/ui/button';
 import { Typography } from '@/app/(main)/components/ui/typography';
 import Link from 'next/link';
-import { FC } from 'react';
+import { type FC } from 'react';
 
 const IndexPage: FC = () => {
   return (

@@ -3,7 +3,8 @@
     "src/app/**/page.tsx",
     "src/app/**/layout.tsx",
     "src/app/**/error.tsx",
-    "src/app/**/route.ts"
+    "src/app/**/route.ts",
+    "src/scripts/*.ts"
   ],
   "ignorePatterns": [
     "**/node_modules/**",
@@ -14,7 +15,7 @@
     "**/__tests__/**",
     "**/*.d.ts"
   ],
-  "ignoreUnimported": ["src/scripts/**", "src/db/**", "src/middleware.ts"],
+  "ignoreUnimported": ["src/db/**", "src/middleware.ts"],
   "ignoreUnused": ["next", "react", "react-dom"],
   "ignoreUnresolved": []
 }
