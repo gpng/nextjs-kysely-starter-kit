@@ -85,4 +85,4 @@ Components will be installed using the shadcn/ui cli, which will look like
 pnpm dlx shadcn-ui@latest add accordion
 ```
 
-The component will be created in the `src/app/(main)/components/ui` folder.
+The component will be created in the `src/app/components/ui` folder.

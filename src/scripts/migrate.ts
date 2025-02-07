@@ -1,10 +1,9 @@
 /* eslint-disable no-console */
 
-import { promises as fs } from 'fs';
+import { promises as fs } from 'node:fs';
+import * as path from 'node:path';
+import database from '@/services/db/database';
 import { FileMigrationProvider, Migrator } from 'kysely';
-import * as path from 'path';
-// use relative import as ts-node does not resolve aliases
-import database from '../db/database';
 
 // up (default) or down
 const command = process.argv[2] === 'down' ? 'down' : 'up';
@@ -16,7 +15,13 @@ const migrate = async () => {
       fs,
       path,
       // This needs to be an absolute path.
-      migrationFolder: path.join(__dirname, '..', 'db', 'migrations'),
+      migrationFolder: path.join(
+        __dirname,
+        '..',
+        'services',
+        'db',
+        'migrations',
+      ),
     }),
   });
 
@@ -32,13 +37,17 @@ const migrate = async () => {
 const migrateUp = async (migrator: Migrator) => {
   const { error, results } = await migrator.migrateToLatest();
 
-  results?.forEach((it) => {
-    if (it.status === 'Success') {
-      console.log(`migration "${it.migrationName}" was executed successfully`);
-    } else if (it.status === 'Error') {
-      console.error(`failed to execute migration "${it.migrationName}"`);
+  if (!results) return;
+
+  for (const result of results) {
+    if (result.status === 'Success') {
+      console.log(
+        `migration "${result.migrationName}" was executed successfully`,
+      );
+    } else if (result.status === 'Error') {
+      console.error(`failed to execute migration "${result.migrationName}"`);
     }
-  });
+  }
 
   if (error) {
     console.error('failed to migrate');
@@ -50,13 +59,20 @@ const migrateUp = async (migrator: Migrator) => {
 const migrateDown = async (migrator: Migrator) => {
   const { error, results } = await migrator.migrateDown();
 
-  results?.forEach((it) => {
-    if (it.status === 'Success') {
-      console.log(`rollback migration "${it.migrationName}" was executed successfully`);
-    } else if (it.status === 'Error') {
-      console.error(`failed to execute rollback migration "${it.migrationName}"`);
+  if (!results) return;
+
+  // rewrite using for...of
+  for (const result of results) {
+    if (result.status === 'Success') {
+      console.log(
+        `rollback migration "${result.migrationName}" was executed successfully`,
+      );
+    } else if (result.status === 'Error') {
+      console.error(
+        `failed to execute rollback migration "${result.migrationName}"`,
+      );
     }
-  });
+  }
 
   if (error) {
     console.error('failed to rollback migrate');
