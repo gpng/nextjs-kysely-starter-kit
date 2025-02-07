@@ -1,6 +1,6 @@
 {
+  "entry": ["src/scripts/*.ts"],
   "ignore": [
-    "src/scripts/*.ts",
     "src/services/db/migrations/*.ts",
     "src/app/components/ui/*.{ts,tsx}",
     "src/services/db/types.ts"
